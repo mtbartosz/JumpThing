@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mkQLclFCvH+c2lEc/ek0FX5KY7WEmIU56RLcxCFJPh8FHnhz2k71XlgLvgrVEpNH9ASmYcz1/X9MDxS/3h2OiQ==",
+  "dgSpecHash": "zVUKKMvT2ERIjookIvqTcigfDSzakyCrsxCRzl6nNc1cRFRLQnzb+JX6I0lvWysxXeC6OmpWglBQ+I7pprsboA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mtbar\\Desktop\\College\\C#\\Jumpy\\jumpthingy\\jumpthingy\\jumpthingy.csproj",
+  "projectFilePath": "C:\\Users\\mtbar\\Desktop\\College\\C#\\Jumpy\\jumpthingy\\JumpThing\\jumpthingy\\jumpthingy.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mtbar\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
     "C:\\Users\\mtbar\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512"

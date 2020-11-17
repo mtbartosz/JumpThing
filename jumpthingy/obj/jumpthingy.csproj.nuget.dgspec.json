@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mtbar\\Desktop\\College\\C#\\Jumpy\\jumpthingy\\jumpthingy\\jumpthingy.csproj": {}
+    "C:\\Users\\mtbar\\Desktop\\College\\C#\\Jumpy\\jumpthingy\\JumpThing\\jumpthingy\\jumpthingy.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mtbar\\Desktop\\College\\C#\\Jumpy\\jumpthingy\\jumpthingy\\jumpthingy.csproj": {
+    "C:\\Users\\mtbar\\Desktop\\College\\C#\\Jumpy\\jumpthingy\\JumpThing\\jumpthingy\\jumpthingy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mtbar\\Desktop\\College\\C#\\Jumpy\\jumpthingy\\jumpthingy\\jumpthingy.csproj",
+        "projectUniqueName": "C:\\Users\\mtbar\\Desktop\\College\\C#\\Jumpy\\jumpthingy\\JumpThing\\jumpthingy\\jumpthingy.csproj",
         "projectName": "jumpthingy",
-        "projectPath": "C:\\Users\\mtbar\\Desktop\\College\\C#\\Jumpy\\jumpthingy\\jumpthingy\\jumpthingy.csproj",
+        "projectPath": "C:\\Users\\mtbar\\Desktop\\College\\C#\\Jumpy\\jumpthingy\\JumpThing\\jumpthingy\\jumpthingy.csproj",
         "packagesPath": "C:\\Users\\mtbar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mtbar\\Desktop\\College\\C#\\Jumpy\\jumpthingy\\jumpthingy\\obj\\",
+        "outputPath": "C:\\Users\\mtbar\\Desktop\\College\\C#\\Jumpy\\jumpthingy\\JumpThing\\jumpthingy\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mtbar\\AppData\\Roaming\\NuGet\\NuGet.Config",

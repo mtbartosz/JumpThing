@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/mtbar/Desktop/College/C#/Jumpy/jumpthingy/jumpthingy/Content/JumpThing_spriteSheet2.png</SourceFile>
+  <SourceFile>C:/Users/mtbar/Desktop/College/C#/Jumpy/jumpthingy/JumpThing/jumpthingy/Content/JumpThing_spriteSheet2.png</SourceFile>
   <SourceTime>2019-11-11T12:46:32+00:00</SourceTime>
-  <DestFile>C:/Users/mtbar/Desktop/College/C#/Jumpy/jumpthingy/jumpthingy/Content/bin/DesktopGL/Content/JumpThing_spriteSheet2.xnb</DestFile>
-  <DestTime>2020-11-09T14:43:37.259149+00:00</DestTime>
+  <DestFile>C:/Users/mtbar/Desktop/College/C#/Jumpy/jumpthingy/JumpThing/jumpthingy/Content/bin/DesktopGL/Content/JumpThing_spriteSheet2.xnb</DestFile>
+  <DestTime>2020-11-17T14:18:17.5343217+00:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

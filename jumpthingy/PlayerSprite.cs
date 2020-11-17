@@ -12,7 +12,7 @@ namespace jumpthingy
 
     {
         bool jumping, walking, falling, jumpIsPressed;
-        const float jumpSpeed = 150f;
+        const float jumpSpeed = 7f;
         const float walkSpeed = 100f;
         public PlayerSprite(Texture2D newSpriteSheet, Texture2D newCollisionTxr, Vector2 newLocation)
         : base(newSpriteSheet, newCollisionTxr, newLocation)
@@ -52,6 +52,48 @@ namespace jumpthingy
 
         public void Update(GameTime gameTime, List<PlatformSprite> platforms)
         {
+            KeyboardState keyboardState = Keyboard.GetState();
+            GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
+
+            if (!jumpIsPressed && !jumping && !falling &&
+                (keyboardState.IsKeyDown(Keys.W) || keyboardState.IsKeyDown(Keys.Space)
+                || gamePadState.IsButtonDown(Buttons.A)))
+            {
+                jumpIsPressed = true;
+                jumping = true;
+                walking = false;
+                falling = false;
+                spriteVelocity.Y -= jumpSpeed;
+            }
+            else if (jumpIsPressed && !jumping && !falling &&
+                !(keyboardState.IsKeyDown(Keys.W) || keyboardState.IsKeyDown(Keys.Space)
+                || gamePadState.IsButtonDown(Buttons.A)))
+            {
+                jumpIsPressed = false;
+            }
+            
+
+            if (keyboardState.IsKeyDown(Keys.A) || keyboardState.IsKeyDown(Keys.Left)
+                || gamePadState.IsButtonDown(Buttons.DPadLeft))
+            {
+                walking = true;
+                spriteVelocity.X = -walkSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                flipped = true;
+            }
+            else if (keyboardState.IsKeyDown(Keys.D) || keyboardState.IsKeyDown(Keys.Right)
+                || gamePadState.IsButtonDown(Buttons.DPadRight))
+            {
+                walking = true;
+                spriteVelocity.X = walkSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                flipped = false;
+
+            }
+            else
+            {
+                walking = false;
+                spriteVelocity.X = 0;
+            }
+
             if ((falling || jumping) && spriteVelocity.Y < 500f)
                 spriteVelocity.Y += 5f * (float)gameTime.ElapsedGameTime.TotalSeconds;
             spritePos += spriteVelocity;
@@ -62,6 +104,7 @@ namespace jumpthingy
             {
                 if (checkCollisionBelow(platform))
                 {
+                    
                     hasCollided = true;
                     while (checkCollision(platform)) spritePos.Y--;
                     spriteVelocity.Y = 0;
@@ -79,14 +122,14 @@ namespace jumpthingy
                 if (checkCollisionLeft(platform))
                 {
                     hasCollided = true;
-                    while (checkCollision(platform)) spritePos.X++;
+                    while (checkCollision(platform)) spritePos.X--;
                     spriteVelocity.X = 0;
 
                 }
                 else if (checkCollisionRight(platform))
                 {
                     hasCollided = true;
-                    while (checkCollision(platform)) spritePos.X--;
+                    while (checkCollision(platform)) spritePos.X++;
                     spriteVelocity.X = 0;
 
                 }
@@ -118,7 +161,7 @@ namespace jumpthingy
                 spriteVelocity = new Vector2();
                 jumping = false;
                 walking = false;
-                falling = false;     // falling
+                falling = true;     
             }
 
     }
