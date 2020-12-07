@@ -50,3 +50,8 @@ C:\Users\mtbar\Desktop\College\C#\Jumpy\jumpthingy\JumpThing\jumpthingy\obj\Debu
 C:\Users\mtbar\Desktop\College\C#\Jumpy\jumpthingy\JumpThing\jumpthingy\obj\Debug\netcoreapp3.1\jumpthingy.dll
 C:\Users\mtbar\Desktop\College\C#\Jumpy\jumpthingy\JumpThing\jumpthingy\obj\Debug\netcoreapp3.1\jumpthingy.pdb
 C:\Users\mtbar\Desktop\College\C#\Jumpy\jumpthingy\JumpThing\jumpthingy\obj\Debug\netcoreapp3.1\jumpthingy.genruntimeconfig.cache
+C:\Users\mtbar\Desktop\College\C#\Jumpy\jumpthingy\JumpThing\jumpthingy\bin\Debug\netcoreapp3.1\Content\UIText.xnb
+C:\Users\mtbar\Desktop\College\C#\Jumpy\jumpthingy\JumpThing\jumpthingy\bin\Debug\netcoreapp3.1\Content\bump.xnb
+C:\Users\mtbar\Desktop\College\C#\Jumpy\jumpthingy\JumpThing\jumpthingy\bin\Debug\netcoreapp3.1\Content\fanfare.xnb
+C:\Users\mtbar\Desktop\College\C#\Jumpy\jumpthingy\JumpThing\jumpthingy\bin\Debug\netcoreapp3.1\Content\jump.xnb
+C:\Users\mtbar\Desktop\College\C#\Jumpy\jumpthingy\JumpThing\jumpthingy\bin\Debug\netcoreapp3.1\Content\UITextFont.xnb

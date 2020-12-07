@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
 using System.Collections.Generic;
 
 
@@ -12,6 +13,8 @@ namespace jumpthingy
         private SpriteBatch _spriteBatch;
 
         Texture2D backgroundTxr, playerSheetTxr, platformSheetTxr, whiteBox;
+        SpriteFont uiTextFont;
+        SoundEffect jumpSound, bumpSound, fanfareSound;
 
         Point screenSize = new Point(800, 450);
         int levelNumber = 0; 
@@ -46,11 +49,16 @@ namespace jumpthingy
             backgroundTxr = Content.Load<Texture2D>("JumpThing_background");
             platformSheetTxr = Content.Load<Texture2D>("JumpThing_spriteSheet2");
             playerSheetTxr = Content.Load<Texture2D>("JumpThing_spriteSheet1");
+            uiTextFont = Content.Load<SpriteFont>("UITextFont");
+            jumpSound = Content.Load<SoundEffect>("jump");
+            bumpSound = Content.Load<SoundEffect>("bump");
+            fanfareSound = Content.Load<SoundEffect>("fanfare");
+
 
             whiteBox = new Texture2D(GraphicsDevice, 1, 1);
             whiteBox.SetData(new[] { Color.White });
 
-            playerSprite = new PlayerSprite(playerSheetTxr, whiteBox, new Vector2(100, 50));
+            playerSprite = new PlayerSprite(playerSheetTxr, whiteBox, new Vector2(100, 50), jumpSound, bumpSound);
             coinSprite = new CoinSprite(playerSheetTxr, whiteBox, new Vector2(200, 200));
 
             BuildLevels();
@@ -70,13 +78,23 @@ namespace jumpthingy
 
             playerSprite.Update(gameTime, levels[levelNumber]);
 
-            if (playerSprite.spritePos.Y > screenSize.Y + 50) playerSprite.ResetPlayer(new Vector2(50, 50));
+            if (playerSprite.spritePos.Y > screenSize.Y + 50)
+            {
+                playerSprite.lives--;
+                if (playerSprite.lives <= 0)
+                {
+                    playerSprite.lives = 3;
+                    levelNumber = 0;
+                }
+                playerSprite.ResetPlayer(new Vector2(100, 50));
+            }
             if (playerSprite.checkCollision(coinSprite))
             {
                 levelNumber++;
                 if (levelNumber >= levels.Count) levelNumber = 0;
                 coinSprite.spritePos = coins[levelNumber];
                 playerSprite.ResetPlayer(new Vector2(100, 50));
+                fanfareSound.Play();
             }
 
             base.Update(gameTime);
@@ -85,6 +103,8 @@ namespace jumpthingy
 
         protected override void Draw(GameTime gameTime)
         {
+            
+
             _spriteBatch.Begin();
 
             _spriteBatch.Draw(backgroundTxr, new Rectangle(0, 0, screenSize.X, screenSize.Y), Color.White);
@@ -93,6 +113,22 @@ namespace jumpthingy
             coinSprite.Draw(_spriteBatch, gameTime);
 
             foreach (PlatformSprite platform in levels[levelNumber]) platform.Draw(_spriteBatch, gameTime);
+
+            string livesString = "";
+
+            for(int i = 0; i < playerSprite.lives; i++) livesString += "O";
+
+            
+
+            _spriteBatch.DrawString(uiTextFont, livesString, new Vector2(15, 10), Color.White);
+
+
+            
+            _spriteBatch.DrawString(
+                uiTextFont,
+                "level" + (levelNumber + 1),
+                new Vector2(screenSize.X - 15 - uiTextFont.MeasureString("level " + (levelNumber +1 )).X, 5),
+                Color.White);
            
             
 

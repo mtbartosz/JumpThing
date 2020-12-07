@@ -4,11 +4,19 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/mtbar/Desktop/College/C#/Jumpy/jumpthingy/jumpthingy/Content/JumpThing_background.png</File>
-    <File>C:/Users/mtbar/Desktop/College/C#/Jumpy/jumpthingy/jumpthingy/Content/JumpThing_spriteSheet1.png</File>
-    <File>C:/Users/mtbar/Desktop/College/C#/Jumpy/jumpthingy/jumpthingy/Content/JumpThing_spriteSheet2.png</File>
+    <File>C:/Users/mtbar/Desktop/College/C#/Jumpy/jumpthingy/JumpThing/jumpthingy/Content/bump.wav</File>
+    <File>C:/Users/mtbar/Desktop/College/C#/Jumpy/jumpthingy/JumpThing/jumpthingy/Content/fanfare.wav</File>
+    <File>C:/Users/mtbar/Desktop/College/C#/Jumpy/jumpthingy/JumpThing/jumpthingy/Content/jump.wav</File>
+    <File>C:/Users/mtbar/Desktop/College/C#/Jumpy/jumpthingy/JumpThing/jumpthingy/Content/JumpThing_background.png</File>
+    <File>C:/Users/mtbar/Desktop/College/C#/Jumpy/jumpthingy/JumpThing/jumpthingy/Content/JumpThing_spriteSheet1.png</File>
+    <File>C:/Users/mtbar/Desktop/College/C#/Jumpy/jumpthingy/JumpThing/jumpthingy/Content/JumpThing_spriteSheet2.png</File>
+    <File>C:/Users/mtbar/Desktop/College/C#/Jumpy/jumpthingy/JumpThing/jumpthingy/Content/UITextFont.spritefont</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

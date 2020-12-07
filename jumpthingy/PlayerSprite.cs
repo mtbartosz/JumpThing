@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
 
 namespace jumpthingy
@@ -12,22 +13,32 @@ namespace jumpthingy
 
     {
         bool jumping, walking, falling, jumpIsPressed;
-        const float jumpSpeed = 7f;
+        const float jumpSpeed = 5f;
         const float walkSpeed = 100f;
-        public PlayerSprite(Texture2D newSpriteSheet, Texture2D newCollisionTxr, Vector2 newLocation)
+        public int lives = 3;
+        SoundEffect jumpSound, bumpSound;
+        public PlayerSprite(Texture2D newSpriteSheet, Texture2D newCollisionTxr,
+            Vector2 newLocation, SoundEffect newJumpSound, SoundEffect newBumpSound)
         : base(newSpriteSheet, newCollisionTxr, newLocation)
         {
+            jumpSound = newJumpSound;
+            bumpSound = newBumpSound;
+
             spriteOrigin = new Vector2(0.5f, 1f);
             isColliding = true;
             //drawCollision = true;
             collisionInsetMin = new Vector2(0.25f, 0.3f);
-            collisionInsetMax = new Vector2(0.25f, 0f);
+            collisionInsetMax = new Vector2(0.25f, 0.03f);
 
-            frameTime = 0.2f;
+            frameTime = 0.1f;
             animations = new List<List<Rectangle>>();
 
             animations.Add(new List<Rectangle>());
             animations[0].Add(new Rectangle(0, 0, 48, 48));
+            animations[0].Add(new Rectangle(0, 0, 48, 48));
+            animations[0].Add(new Rectangle(0, 0, 48, 48));
+            animations[0].Add(new Rectangle(48, 0, 48, 48));
+            animations[0].Add(new Rectangle(48, 0, 48, 48));
             animations[0].Add(new Rectangle(48, 0, 48, 48));
 
             animations.Add(new List<Rectangle>());
@@ -64,6 +75,7 @@ namespace jumpthingy
                 walking = false;
                 falling = false;
                 spriteVelocity.Y -= jumpSpeed;
+                jumpSound.Play();
             }
             else if (jumpIsPressed && !jumping && !falling &&
                 !(keyboardState.IsKeyDown(Keys.W) || keyboardState.IsKeyDown(Keys.Space)
@@ -104,7 +116,7 @@ namespace jumpthingy
             {
                 if (checkCollisionBelow(platform))
                 {
-                    
+                    bumpSound.Play();
                     hasCollided = true;
                     while (checkCollision(platform)) spritePos.Y--;
                     spriteVelocity.Y = 0;
